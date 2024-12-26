@@ -1,0 +1,1 @@
+ALTER TABLE "User" ADD COLUMN "clerkId" varchar(128) DEFAULT 'n/a';
