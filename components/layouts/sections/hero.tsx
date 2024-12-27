@@ -48,7 +48,7 @@ export const HeroSection = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
           <Link href={"/home"}>
             <Button className="px-4 sm:px-6 py-2 sm:py-4 rounded font-bold text-base sm:text-lg bg-orange-500 hover:opacity-90 group ">
-              DEPLOY NOW
+              Start Chat
               <ArrowRight className="size-4 sm:size-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
