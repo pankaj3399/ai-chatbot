@@ -18,15 +18,16 @@ import {
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { auth } from '@clerk/nextjs/server';
-import { SignOutButton, useAuth } from '@clerk/nextjs';
+import { SignOutButton, useAuth, useClerk } from '@clerk/nextjs';
+import { Button } from './ui/button';
 
 export function SidebarUserNav() {
   const { setTheme, theme } = useTheme();
-  const session = useAuth()
+  const clerk = useClerk()
   return (
     <SidebarMenu>
       <SidebarMenuItem>
-        <DropdownMenu>
+        {/* <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton className=" h-10">
               <p>Menu</p>
@@ -48,7 +49,20 @@ export function SidebarUserNav() {
               <SignOutButton redirectUrl='/'/>
             </DropdownMenuItem>
           </DropdownMenuContent>
-        </DropdownMenu>
+        </DropdownMenu> */}
+        <Button className=" w-full cursor-pointer bg-[#cfcfcf] dark:bg-[#2d2d2d] text-black dark:text-white hover:bg-[#cfcfcf] mb-3 "
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            >
+              {`Toggle ${theme === 'light' ? 'dark' : 'light'} mode`}
+
+        </Button>
+      
+
+        <Button onClick={()=>{
+          clerk.signOut()
+        }} className='cursor-pointer w-full bg-[#cfcfcf] dark:bg-[#2d2d2d] text-center text-black dark:text-white hover:bg-[#cfcfcf]  '>
+             Sign Out
+        </Button>
       </SidebarMenuItem>
     </SidebarMenu>
   );

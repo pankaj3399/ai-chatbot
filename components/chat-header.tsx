@@ -12,6 +12,8 @@ import { useSidebar } from './ui/sidebar';
 import { memo } from 'react';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 import { VisibilityType, VisibilitySelector } from './visibility-selector';
+import Navbar from './layouts/sections/navbar';
+import ChatNav from './chat-nav';
 
 function PureChatHeader({
   chatId,
@@ -30,7 +32,10 @@ function PureChatHeader({
   const { width: windowWidth } = useWindowSize();
 
   return (
+    <>
+    <ChatNav />
     <header className="flex sticky top-0 dark:bg-[#000] bg-white py-1.5 items-center px-2 md:px-2 gap-2">
+      
       <SidebarToggle className='bg-white dark:bg-black' />
 
       {(!open || windowWidth < 768) && (
@@ -69,6 +74,8 @@ function PureChatHeader({
 
      
     </header>
+    </>
+
   );
 }
 
