@@ -92,7 +92,7 @@ const teamMembers = [
 
 function Teams() {
   return (
-    <div id="team" className="min-h-screen bg-white text-black py-20 px-8 sm:px-4 dark:bg-gray-900 dark:text-white">
+    <div id="team" className="min-h-screen bg-white text-black py-20 px-8 sm:px-4 dark:bg-black dark:text-white">
     <div className="max-w-5xl mx-auto">
       <p className="text-center text-orange-500 mb-2">Team</p>
       <h2 className="text-2xl md:text-4xl font-bold text-center mb-16">
