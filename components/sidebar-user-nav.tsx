@@ -50,7 +50,7 @@ export function SidebarUserNav() {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu> */}
-        <Button className=" w-full cursor-pointer bg-[#cfcfcf] dark:bg-[#2d2d2d] text-black dark:text-white hover:bg-[#cfcfcf] mb-3 "
+        {/* <Button className=" w-full cursor-pointer bg-[#cfcfcf] dark:bg-[#2d2d2d] text-black dark:text-white hover:bg-[#cfcfcf] mb-3 "
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             >
               {`Toggle ${theme === 'light' ? 'dark' : 'light'} mode`}
@@ -62,7 +62,7 @@ export function SidebarUserNav() {
           clerk.signOut()
         }} className='cursor-pointer w-full bg-[#cfcfcf] dark:bg-[#2d2d2d] text-center text-black dark:text-white hover:bg-[#cfcfcf]  '>
              Sign Out
-        </Button>
+        </Button> */}
       </SidebarMenuItem>
     </SidebarMenu>
   );
