@@ -105,7 +105,7 @@ function Teams() {
               <div className="relative aspect-[4/5] overflow-hidden">
                 <img
                   src={member.image}
-                  alt={${member.name} ${member.surname}}
+                  alt={`${member.name} ${member.surname}`}
                   className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
                 />
               </div>
