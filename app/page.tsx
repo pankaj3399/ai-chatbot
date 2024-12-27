@@ -5,7 +5,7 @@ import Footer from "@/components/layouts/sections/footer";
 import HeroSection from "@/components/layouts/sections/hero";
 import Navbar from "@/components/layouts/sections/navbar";
 import Testimonials from "@/components/layouts/sections/testimonials";
-
+import Teams from "@/components/layouts/sections/image";
 
 export default function LandingPage() {
   return (
@@ -14,6 +14,7 @@ export default function LandingPage() {
       <HeroSection/>
       <Features/>
       <Testimonials/>
+      <Teams/>
       <Contact />
       <FAQ />
       <Footer/>
