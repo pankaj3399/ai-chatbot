@@ -343,7 +343,7 @@ function PureBlock({
                     setAttachments={setAttachments}
                     messages={messages}
                     append={append}
-                    className="bg-background dark:bg-muted"
+                    className=""
                     setMessages={setMessages}
                   />
                 </form>
@@ -459,7 +459,7 @@ function PureBlock({
 
             <div
               className={cn(
-                'bg-white dark:bg-black h-full overflow-y-scroll !max-w-full pb-40 items-center',
+                'bg-white dark:Bg-black h-full overflow-y-scroll !max-w-full pb-40 items-center',
                 {
                   'py-2 px-2': block.kind === 'code',
                   'py-8 md:p-20 px-4': block.kind === 'text',
