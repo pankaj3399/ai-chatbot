@@ -1,68 +1,73 @@
-<a href="https://chat.vercel.ai/">
-  <img alt="Next.js 14 and App Router-ready AI chatbot." src="app/(chat)/opengraph-image.png">
-  <h1 align="center">Valor AI Chatbot</h1>
-</a>
+Here's a README file for your AI chatbot application:
 
+**AI Chatbot Application**
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#running-locally"><strong>Running locally</strong></a>
-</p>
-<br/>
+This project implements an AI-powered chatbot application.
 
-## Features
+**Prerequisites**
 
-- [Next.js](https://nextjs.org) App Router
-  - Advanced routing for seamless navigation and performance
-  - React Server Components (RSCs) and Server Actions for server-side rendering and increased performance
-- [AI SDK](https://sdk.vercel.ai/docs)
-  - Unified API for generating text, structured objects, and tool calls with LLMs
-  - Hooks for building dynamic chat and generative user interfaces
-  - Supports OpenAI (default), Anthropic, Cohere, and other model providers
-- [shadcn/ui](https://ui.shadcn.com)
-  - Styling with [Tailwind CSS](https://tailwindcss.com)
-  - Component primitives from [Radix UI](https://radix-ui.com) for accessibility and flexibility
-- Data Persistence
-  - [Vercel Postgres powered by Neon](https://vercel.com/storage/postgres) for saving chat history and user data
-  - [Vercel Blob](https://vercel.com/storage/blob) for efficient file storage
+* Node.js and npm (or yarn) installed on your system.
+* An OpenAI API key.
+* A Groq API key.
+* A Postgres database.
+* A Clerk account (for user authentication).
 
+**Installation**
 
+1. Clone the repository:
 
-## Running locally
+   ```bash
+   git clone https://github.com/pankaj3399/ai-chatbot
+   ```
 
-You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js AI Chatbot. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/projects/environment-variables) for this, but a `.env` file is all that is necessary.
+2. Install dependencies:
 
-### Environment Variables Setup
+   ```bash
+   cd ai-chatbot
+   pnpm install
+   ```
 
-Below are the required environment variables and their setup instructions:
+**Environment Variables**
 
-- **OPENAI_API_KEY**: Get your OpenAI API Key here: [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys).
+Create a `.env.local` file in the project root and add the following environment variables:
 
-- **GROQ_API_KEY**: Obtain your GROQ API Key from your respective platform.
+* `OPENAI_API_KEY` (Your OpenAI API key)
+* `GROQ_API_KEY` (Your Groq API key)
+* `AUTH_SECRET` (A random secret string)
+* `POSTGRES_URL` (Your Postgres database URL)
+* `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` (Get from your Clerk dashboard)
+* `CLERK_SECRET_KEY` (Get from your Clerk dashboard)
+* `SIGNING_SECRET` (Get from your Clerk webhooks dashboard)
 
-- **AUTH_SECRET**: Generate a random secret using [this tool](https://generate-secret.vercel.app/32) or run `openssl rand -base64 32` in your terminal.
+**Obtain `BLOB_READ_WRITE_TOKEN`**
 
-- **BLOB_READ_WRITE_TOKEN**: Instructions to create a Vercel Blob Store can be found [here](https://vercel.com/docs/storage/vercel-blob).
+1. **Deployment:** Deploy your application to Vercel.
+2. **Storage:** In your Vercel project dashboard, navigate to the "Storage" tab.
+3. **Create Blob Storage:** Create a new Blob Storage.
+4. **Connect:** Click "Connect". This will automatically add the `BLOB_READ_WRITE_TOKEN` environment variable to your project.
+5. **Redeploy:** Redeploy your application.
 
-- **POSTGRES_URL**: Set up your database following the [Vercel Postgres Quickstart guide](https://vercel.com/docs/storage/vercel-postgres/quickstart).
+**Webhook Setup**
 
-- **NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY** and **CLERK_SECRET_KEY**: Retrieve these keys from your Clerk dashboard.
+1. **Enable Webhooks:** In your Clerk dashboard, go to "Configure" and enable webhooks.
+2. **Add Redirect URL:** Add the URL of your deployed application as the redirect/callback URL.
+3. **Set Trigger Event:** Set the webhook trigger event to "user.created".
+4. **Add `SIGNING_SECRET`:** Add the `SIGNING_SECRET` to your environment variables.
 
-- **SIGNING_SECRET**: Obtain the signing secret for secure token signing.
+**Development**
 
-- **NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL** and **NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL**: Set these URLs to redirect users after sign-in or sign-up, e.g., `/home`.
-
-> **Important**: Ensure that these variables are added to your `.env` file and not exposed publicly. Do not commit the `.env` file to version control.
-
-### Steps to Run Locally
-
-1. Install Vercel CLI: `npm i -g vercel`
-2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
-3. Download your environment variables: `vercel env pull`
+Start the development server:
 
 ```bash
-pnpm install
 pnpm dev
 ```
 
-Your app template should now be running on [localhost:3000](http://localhost:3000/).
+**Production**
+
+Build the application for production:
+
+```bash
+pnpm build
+```
+
+
