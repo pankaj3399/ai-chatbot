@@ -16,26 +16,58 @@ interface SuggestedActionsProps {
 function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
   const suggestedActions = [
     {
-      title: 'What are the advantages',
-      label: 'of using Next.js?',
-      action: 'What are the advantages of using Next.js?',
+      title: 'How do I file my first',
+      label: 'VA disability claim?',
+      action: 'How do I file my first VA disability claim?'
     },
     {
-      title: 'Write code that',
-      label: `demonstrates djikstra's algorithm`,
-      action: `Write code that demonstrates djikstra's algorithm`,
+      title: 'What documents do I need to',
+      label: 'get started with a disability claim?',
+      action: 'What documents do I need to get started with a disability claim?'
     },
     {
-      title: 'Help me write an essay',
-      label: `about silicon valley`,
-      action: `Help me write an essay about silicon valley`,
+      title: 'What is a service-connected disability,',
+      label: 'and how is it determined?',
+      action: 'What is a service-connected disability, and how is it determined?'
     },
     {
-      title: 'What is the weather',
-      label: 'in San Francisco?',
-      action: 'What is the weather in San Francisco?',
+      title: 'What should I do if my disability claim',
+      label: 'gets denied?',
+      action: 'What should I do if my disability claim gets denied?'
     },
-  ];
+    {
+      title: 'What benefits are available for veterans with a',
+      label: '100% disability rating?',
+      action: 'What benefits are available for veterans with a 100% disability rating?'
+    },
+    {
+      title: 'How does the VA calculate my',
+      label: 'disability rating?',
+      action: 'How does the VA calculate my disability rating?'
+    },
+    {
+      title: 'What is the difference between a Higher-Level ',
+      label: 'Review and a Supplemental Claim?',
+      action: 'What is the difference between a Higher-Level Review and a Supplemental Claim?'
+    },
+    {
+      title: 'Can I still work while receiving',
+      label: 'VA disability compensation?',
+      action: 'Can I still work while receiving VA disability compensation?'
+    },
+    {
+      title: 'What is a VA buddy letter,',
+      label: 'and how can it help my claim?',
+      action: 'What is a VA buddy letter, and how can it help my claim?'
+    },
+    {
+      title: 'How do I apply for',
+      label: 'VA health care?',
+      action: 'How do I apply for VA health care?'
+    }
+  ]
+  
+  
 
   return (
     <div className="grid sm:grid-cols-2 gap-2 w-full">
@@ -60,7 +92,7 @@ function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
             }}
             className="text-left border rounded-xl px-4 py-3.5 text-sm flex-1 gap-1 sm:flex-col w-full h-auto justify-start items-start hover:bg-zinc-400 hover:dark:bg-gray-500/30"
           >
-            <span className="font-medium dark:text-white text-gray-500">{suggestedAction.title}</span>
+            <span className="font-medium dark:text-white text-gray-500 text-wrap">{suggestedAction.title}</span>
             <span className="dark:text-white text-black">
               {suggestedAction.label}
             </span>

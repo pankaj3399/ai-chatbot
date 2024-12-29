@@ -43,25 +43,39 @@ Create a `.env.local` file in the project root and add the following environment
 
 1. **Deployment:** Deploy your application to Vercel.
 2. **Storage:** In your Vercel project dashboard, navigate to the "Storage" tab.
+   ![398884831-f3c3c819-2e01-411d-b30f-c7a732ff255f](https://github.com/user-attachments/assets/4891e0d4-7586-412e-88ef-7841e5835a8d)
+ 
 3. **Create Blob Storage:** Create a new Blob Storage.
+   ![398884831-f3c3c819-2e01-411d-b30f-c7a732ff255f (1)](https://github.com/user-attachments/assets/a8c9cd12-415c-4209-bb62-5a83dc81e31a)
+
 4. **Connect:** Click "Connect". This will automatically add the `BLOB_READ_WRITE_TOKEN` environment variable to your project.
+   ![398884831-f3c3c819-2e01-411d-b30f-c7a732ff255f (2)](https://github.com/user-attachments/assets/802eff7b-9f0b-4459-aee1-03878f2aa3ff)
+
 5. **Redeploy:** Redeploy your application.
-![IMG-20241227-WA0009 1](https://github.com/user-attachments/assets/f3c3c819-2e01-411d-b30f-c7a732ff255f)
-![IMG-20241227-WA0008 1](https://github.com/user-attachments/assets/c9ad0184-f869-4ca4-a0b6-61178176fe21)
-![IMG-20241227-WA0005 1](https://github.com/user-attachments/assets/d3f70c34-fb3c-4b1d-b262-f87fdedd4f82)
-![IMG-20241227-WA0010 1](https://github.com/user-attachments/assets/f7820994-935e-4e83-baf6-59f0624188cf)
+   a. Go to "Deployments"
+   b. Click on Three dots.
+   c. Hit Redeploy.
+   ![398884831-f3c3c819-2e01-411d-b30f-c7a732ff255f (3)](https://github.com/user-attachments/assets/34bf7374-8c02-4820-abe9-99ce7c331d3f)
 
 
 
 **Webhook Setup**
 
 1. **Enable Webhooks:** In your Clerk dashboard, go to "Configure" and enable webhooks.
-2. **Add Redirect URL:** Add the URL of your deployed application as the redirect/callback URL. It should look like https://your-app-url/api/webhooks
+   ![Screenshot 2024-12-29 232321](https://github.com/user-attachments/assets/a29695f7-60cc-4f55-add7-2dcc92d7eeac)
+
+2. **Add Redirect URL:** Click on "Add Endpoint" and Add the URL of your deployed application as the redirect/callback URL. It should look like `https://your-app-url/api/webhooks`
+   ![Screenshot 2024-12-29 231921](https://github.com/user-attachments/assets/1a08906b-6a77-4b65-b2e8-c5215d112f97)
+
 3. **Set Trigger Event:** Set the webhook trigger event to "user.created".
+   ![Screenshot 2024-12-29 231940](https://github.com/user-attachments/assets/c1b1206a-6fc7-4405-b998-d0055ac8ec94)
+
 4. **Add `SIGNING_SECRET`:** Add the `SIGNING_SECRET` to your environment variables.
-![397998061-583d3b13-8adc-4041-a8f7-05fbaf6983ab](https://github.com/user-attachments/assets/61fdfdbf-72c8-4a65-9390-babc91639cba)
+   ![Screenshot 2024-12-29 232010](https://github.com/user-attachments/assets/789d4ee8-9b75-46ad-ae13-7aa6212ffce7)
+
 
 **Development**
+
 
 Start the development server:
 
@@ -76,5 +90,3 @@ Build the application for production:
 ```bash
 pnpm build
 ```
-
-
