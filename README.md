@@ -62,12 +62,20 @@ Create a `.env.local` file in the project root and add the following environment
 **Webhook Setup**
 
 1. **Enable Webhooks:** In your Clerk dashboard, go to "Configure" and enable webhooks.
-2. **Add Redirect URL:** Add the URL of your deployed application as the redirect/callback URL. It should look like https://your-app-url/api/webhooks
+   ![Screenshot 2024-12-29 232321](https://github.com/user-attachments/assets/a29695f7-60cc-4f55-add7-2dcc92d7eeac)
+
+2. **Add Redirect URL:** Click on "Add Endpoint" and Add the URL of your deployed application as the redirect/callback URL. It should look like `https://your-app-url/api/webhooks`
+   ![Screenshot 2024-12-29 231921](https://github.com/user-attachments/assets/1a08906b-6a77-4b65-b2e8-c5215d112f97)
+
 3. **Set Trigger Event:** Set the webhook trigger event to "user.created".
+   ![Screenshot 2024-12-29 231940](https://github.com/user-attachments/assets/c1b1206a-6fc7-4405-b998-d0055ac8ec94)
+
 4. **Add `SIGNING_SECRET`:** Add the `SIGNING_SECRET` to your environment variables.
-![397998061-583d3b13-8adc-4041-a8f7-05fbaf6983ab](https://github.com/user-attachments/assets/61fdfdbf-72c8-4a65-9390-babc91639cba)
+   ![Screenshot 2024-12-29 232010](https://github.com/user-attachments/assets/789d4ee8-9b75-46ad-ae13-7aa6212ffce7)
+
 
 **Development**
+
 
 Start the development server:
 
